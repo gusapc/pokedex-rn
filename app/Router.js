@@ -7,7 +7,6 @@ import {
 import { createAppContainer, createSwitchNavigator, createDrawerNavigator, createStackNavigator } from 'react-navigation';
 import { createBottomTabNavigator, createMaterialTopTabNavigator } from 'react-navigation-tabs';
 
-import ExampleScreen from 'pokedex-rn/app/screens/ExampleScreen';
 import WelcomeScreen from 'pokedex-rn/app/screens/WelcomeScreen';
 import LoginScreen from 'pokedex-rn/app/screens/LoginScreen';
 import AuthLoadingScreen from 'pokedex-rn/app/screens/AuthLoadingScreen';
@@ -24,7 +23,6 @@ import FriendScanScreen from 'pokedex-rn/app/screens/FriendScanScreen';
 import MyPokemonScreen from 'pokedex-rn/app/screens/MyPokemonScreen';
 import FriendsScreen from 'pokedex-rn/app/screens/FriendsScreen';
 import QrCodeScreen from 'pokedex-rn/app/screens/QrCodeScreen';
-
 
 const ProfileTabNavigator = createMaterialTopTabNavigator({ 
 	MyPokemonScreen,
