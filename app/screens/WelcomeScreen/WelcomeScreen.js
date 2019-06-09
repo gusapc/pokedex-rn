@@ -14,6 +14,7 @@ import TinyText from 'pokedex-rn/app/components/TinyText';
 import TitleText from 'pokedex-rn/app/components/BodyText';
 import BodyText from 'pokedex-rn/app/components/BodyText';
 import AddTeamPokemon from 'pokedex-rn/app/components/AddTeamPokemon';
+import CircleImg from 'pokedex-rn/app/components/CircleImg';
 
 export default class WelcomeScreen extends Component {	
 
@@ -59,6 +60,13 @@ export default class WelcomeScreen extends Component {
 						title='go to LoginScreen'
 						color='red'
 					/> 
+					<View style={styles.row}>
+						<CircleImg />
+						<CircleImg size='Big' />
+						<CircleImg image='https://cdn.hobbyconsolas.com/sites/navi.axelspringer.es/public/styles/main_element/public/media/image/2019/04/pokemon-go-pikachu-gorra-ash_0.jpg?itok=5AE1h-Ye' />
+						<CircleImg size='Big' image='https://cdn.hobbyconsolas.com/sites/navi.axelspringer.es/public/styles/main_element/public/media/image/2019/04/pokemon-go-pikachu-gorra-ash_0.jpg?itok=5AE1h-Ye'/>
+					</View>
+
 				</View>
 			</ScrollView>
 		);

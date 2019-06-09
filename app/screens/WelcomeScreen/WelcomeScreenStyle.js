@@ -3,5 +3,6 @@ import { ApplicationStyles } from 'pokedex-rn/app/styles';
 
 export default StyleSheet.create({
 	...ApplicationStyles.screen,
-	...ApplicationStyles.margins
+	...ApplicationStyles.margins,
+	...ApplicationStyles.flexBox
 });

@@ -1,23 +1,27 @@
-import React, { Component } from 'react';
-import { Text, View } from 'react-native';
+import React from 'react';
+import { Image } from 'react-native';
 import PropTypes from 'prop-types';
-
 import styles from './CircleImgStyle';
+import { Metrics} from 'pokedex-rn/app/styles'
 
-export default class CircleImg extends Component {
-	render() {
-		return (
-			<View>
-				<Text>CircleImg</Text>
-			</View>
-		);
-	}
+export default function CircleImg (props){
+
+	let img = props.image ? { uri: props.image } : require('pokedex-rn/assets/gball.png');
+	
+	return (
+		<Image
+			resizeMode= 'cover'
+			style={styles['avatar' + props.size]}
+			source={img}
+		/>
+	);
 }
 
-	CircleImg.propTypes = {
-		// data: PropTypes.array
-	}
-
-	CircleImg.defaultProps = {
-		// data: []
-	}
+CircleImg.propTypes = {
+	size: PropTypes.string,
+	image: PropTypes.string
+}
+CircleImg.defaultProps = {
+	size: 'Huge',
+	image: ''
+}
