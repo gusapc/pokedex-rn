@@ -76,12 +76,7 @@ const MainModalStack = createStackNavigator({
 
 
 const AuthStack = createStackNavigator({
-	WelcomeScreen: { 
-		screen: WelcomeScreen,
-		navigationOptions: {
-			header: null
-		}
-	}, 
+	WelcomeScreen, 
 	LoginScreen
 }, {
 	transitionConfig: () => ({

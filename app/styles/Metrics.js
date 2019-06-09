@@ -2,7 +2,6 @@ import { Dimensions, Platform } from 'react-native';
 
 const { width, height } = Dimensions.get('window');
 
-// Used via Metrics.baseMargin
 const metrics = {
 	doubleBaseMargin: 32,
 	baseMargin: 16,
@@ -15,7 +14,11 @@ const metrics = {
 		small: 16,
 		regular: 24,
 		large: 48,
-	}
+	},
+	circleIcons: {
+		huge: 60,
+		big: 100,
+	},
 };
 
 export default metrics;
