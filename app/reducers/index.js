@@ -1,9 +1,11 @@
 import { combineReducers } from 'redux'
-import Example from 'pokedex-rn/app/reducers/ExampleReducer';
+import Auth, * as fromAuth from 'pokedex-rn/app/reducers/AuthReducer';
 
 const rootReducer = combineReducers({
-	Example,
+	Auth,
 });
 
 export default rootReducer;
 
+export const getAuthData = state =>
+	fromAuth.getAuthData(state.Auth);
