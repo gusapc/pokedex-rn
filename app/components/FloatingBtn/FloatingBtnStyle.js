@@ -1,5 +1,18 @@
 import { StyleSheet } from 'react-native';
-import { ApplicationStyles, Fonts, Colors, Metrics } from 'pokedex-rn/app/styles';
+import { ApplicationStyles, Colors } from 'pokedex-rn/app/styles';
 
 export default StyleSheet.create({
+	...ApplicationStyles.flexBox,
+	circle: { 
+		backgroundColor: Colors.red,
+		justifyContent: 'center',
+		alignItems: 'center',
+		width: 60,
+		height: 60,
+		borderRadius: 35,
+		position: 'absolute',
+		bottom: 15,
+		right: 15,
+		zIndex: 10
+	},
 });

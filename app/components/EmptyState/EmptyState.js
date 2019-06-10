@@ -1,23 +1,22 @@
-import React, { Component } from 'react';
-import { Text, View } from 'react-native';
+import React from 'react';
+import { View } from 'react-native';
 import PropTypes from 'prop-types';
-
 import styles from './EmptyStateStyle';
+import SubtitleText from 'pokedex-rn/app/components/SubtitleText';
+import BodyText from 'pokedex-rn/app/components/BodyText';
 
-export default class EmptyState extends Component {
-	render() {
-		return (
-			<View>
-				<Text>EmptyState</Text>
-			</View>
-		);
-	}
+export default function EmptyState (props) {
+	return (
+		<View style={[styles.flex1, styles.justifyContentCenter, styles.alignCenter]}>
+			<SubtitleText
+				text={props.title}
+				color='black'
+			/>
+			<BodyText 
+				text={props.subtitle}
+				color='darkest'
+			/>
+		</View>
+	);
 }
 
-	EmptyState.propTypes = {
-		// data: PropTypes.array
-	}
-
-	EmptyState.defaultProps = {
-		// data: []
-	}

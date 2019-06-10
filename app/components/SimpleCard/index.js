@@ -1,3 +1,3 @@
-import SimpleCard from './SimpleCard';
+import SimpleCard from  './SimpleCard';
 
 export default SimpleCard;

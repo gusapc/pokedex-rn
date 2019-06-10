@@ -1,23 +1,45 @@
-import React, { Component } from 'react';
-import { Text, View } from 'react-native';
+import React from 'react';
+import { 
+	View,
+	StatusBar 
+} from 'react-native';
 import PropTypes from 'prop-types';
-
 import styles from './HeaderNavStyle';
+import { Colors } from 'pokedex-rn/app/styles';
 
-export default class HeaderNav extends Component {
-	render() {
-		return (
-			<View>
-				<Text>HeaderNav</Text>
-			</View>
-		);
-	}
+export default function HeaderNav (props) {
+
+	let bgColor = { backgroundColor: Colors[props.bgColor] }
+	return (
+		<View style={[
+			styles.row,
+			styles.baseMarginTop,
+			styles.alignItemsCenter,
+			styles.baseHorizontalPadding,
+			styles.justifySpaceBetween,
+			styles.marginVertical,
+			bgColor]}
+		>
+				<StatusBar barStyle={ props.statusBar } />
+				{ props.left && props.left }
+				{ props.center && (props.center ) }
+				{ props.right && (props.right) }
+		</View>
+	);
 }
 
-	HeaderNav.propTypes = {
-		// data: PropTypes.array
-	}
+HeaderNav.propTypes = {
+	left: PropTypes.object,
+	statusBar: PropTypes.string,
+	center: PropTypes.object,
+	right: PropTypes.object,
+	bgColor: PropTypes.string,
+}
 
-	HeaderNav.defaultProps = {
-		// data: []
-	}
+HeaderNav.defaultProps = {
+	left: null,
+	statusBar: 'default',
+	center: null,
+	right: null,
+	bgColor: 'transparent',
+}

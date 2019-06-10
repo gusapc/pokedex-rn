@@ -5,17 +5,18 @@ import PropTypes from 'prop-types';
 import styles from './HugeTextStyle';
 import { Fonts, Colors } from 'pokedex-rn/app/styles';
 
-export default function HugeText (props) {
-	const color = { color: Colors[props.color] };
-	const weight = { fontWeight: Fonts.weight[props.weight] };
-	const align = { textAlign: props.align };
-	return (
-		<React.Fragment>
-			<Text style={[styles.text, color, weight, align]}>{props.text}</Text>
-		</React.Fragment>
-	);
+export default class HugeText extends PureComponent {
+	render() {
+		const color = { color: Colors[this.props.color] };
+		const weight = { fontWeight: Fonts.weight[this.props.weight] };
+		const align = { textAlign: this.props.align };
+		return (
+			<React.Fragment>
+				<Text style={[styles.text, color, weight, align]}>{this.props.text}</Text>
+			</React.Fragment>
+		);
+	}
 }
-
 
 HugeText.propTypes = {
 	text: PropTypes.node,
