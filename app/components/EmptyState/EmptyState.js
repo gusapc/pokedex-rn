@@ -20,3 +20,13 @@ export default function EmptyState (props) {
 	);
 }
 
+
+EmptyState.propTypes = {
+	title: PropTypes.string,
+	subtitle: PropTypes.string
+}
+
+EmptyState.defaultProps = {
+	title: 'Registros vacios',
+	subtitle: 'Intenta buscar mastarde'
+}

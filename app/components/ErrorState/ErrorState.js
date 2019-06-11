@@ -28,6 +28,6 @@ ErrorState.propTypes = {
 }
 
 ErrorState.defaultProps = {
-	title: 'Registros vacios',
+	title: 'Error',
 	subtitle: 'Intenta buscar mastarde'
 }
