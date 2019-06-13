@@ -32,9 +32,9 @@ export default function HomeScreen (props) {
 	
 	const dispatch = useDispatch();
 	const isLoading = useSelector(getIsLoadingPokemonList);
-	const isRefreshing = useSelector(getIsRefreshingPokemonList);
 	const pokeList = useSelector(getPokemonList);
 	const error = useSelector(getErrorPokemonList);
+	const isRefreshing = useSelector(getIsRefreshingPokemonList);
 
 	const loadData = () => {
 		dispatch(fetchPokemonListBatch())

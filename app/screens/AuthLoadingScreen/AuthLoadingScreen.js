@@ -14,7 +14,6 @@ export default function AuthLoadingScreen (props) {
 	}, []);
 
 	const authData = useSelector(getAuthData);
-
 	async function _bootstrapAsync () {
 		props.navigation.navigate(authData.loggedIn? 'App':'Auth');
 	}
