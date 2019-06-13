@@ -1,11 +1,12 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { getKantoData } from 'pokedex-rn/app/actions/KantoActions';
 import { 
 	getIsLoadingKanto,
 	getKanto,
 	getErrorKanto,
 } from 'pokedex-rn/app/reducers';
+import { getKantoData } from 'pokedex-rn/app/actions/KantoActions';
+
 import ApiMapContainer from 'pokedex-rn/app/containers/ApiMapContainer';
 import ColumnsIconArrow from 'pokedex-rn/app/components/ColumnsIconArrow';
 import NavigationService from 'pokedex-rn/app/services/NavigationService';

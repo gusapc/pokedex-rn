@@ -25,7 +25,7 @@ export default function KantoScreen (props) {
 					</TouchableOpacity>
 				}
 			/>
-			<ScrollView style={styles.baseMarginBottom}>
+			<ScrollView style={styles.bottomMargin}>
 				<KantoContainer/>
 			</ScrollView>
 		</View>
