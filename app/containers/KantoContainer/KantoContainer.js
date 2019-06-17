@@ -42,16 +42,14 @@ export default function KantoContainer (props) {
 	}
 
 	return(
-		<View> 
-			<ApiMapContainer  
-				loadData={() => loadData()}
-				data={kantoData.pokemon_entries}
-				renderItem={renderItem}
-				ItemSeparatorComponent={() => (<Divider/>)}
-				isLoading={isLoading}
-				error={error}
-				keyId={'entry_number'}
-			/>
-		</View>
+		<ApiMapContainer  
+			loadData={() => loadData()}
+			data={kantoData.pokemon_entries}
+			renderItem={renderItem}
+			ItemSeparatorComponent={() => (<Divider/>)}
+			isLoading={isLoading}
+			error={error}
+			keyId={'entry_number'}
+		/>
 	);
 }

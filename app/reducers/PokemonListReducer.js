@@ -7,7 +7,7 @@ import {
 	RESET_POKEMON_LIST_PAGINATION
 } from 'pokedex-rn/app/actions/PokemonListActions';
 
-const PAGE_SIZE = 900;
+const PAGE_SIZE = 50;
 
 const initialState = {
 	byId: {},

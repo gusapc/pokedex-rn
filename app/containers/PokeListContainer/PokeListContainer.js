@@ -27,7 +27,6 @@ class PokeListContainer extends Component {
 				title={pokeName}
 				color={'darkest'}
 				onPress={() =>{
-					// console.log(index);
 					// this.props.fetchtPokemon(item.name);
 					// NavigationService.navigate('PokemonDetilsScreen', {
 					// 	pokeName: pokeName

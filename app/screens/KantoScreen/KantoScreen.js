@@ -17,7 +17,7 @@ export default function KantoScreen (props) {
 				statusBar='dark-content'
 				left={
 					<TouchableOpacity
-						onPress={() => this.props.navigation.openDrawer()}
+						onPress={() => props.navigation.openDrawer()}
 						style={styles.marginHorizontal}
 						activeOpacity={0.6}
 					>

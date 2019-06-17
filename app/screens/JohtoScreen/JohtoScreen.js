@@ -8,7 +8,7 @@ import {
 import styles from './JohtoScreenStyle';
 import HeaderNav from 'pokedex-rn/app/components/HeaderNav';
 import TitleText from 'pokedex-rn/app/components/TitleText';
-import PokeListByRegionContainer from 'pokedex-rn/app/containers/PokeListByRegionContainer';
+import JohtoContainer from 'pokedex-rn/app/containers/JohtoContainer';
 
 export default class JohtoScreen extends Component {	
 	
@@ -28,10 +28,7 @@ export default class JohtoScreen extends Component {
 					}
 				/>
 				<ScrollView>
-					<PokeListByRegionContainer
-						modelName='Johto'
-						regionId='7'
-					/>
+					<JohtoContainer />
 				</ScrollView>
 			</View>
 		);

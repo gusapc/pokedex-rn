@@ -4,20 +4,27 @@ import { combineReducers } from 'redux'
 import Auth, * as fromAuth from 'pokedex-rn/app/reducers/AuthReducer';
 import CreateApiReducer, * as fromCreateApiReducer from 'pokedex-rn/app/reducers/CreateApiReducer.js'
 import CreateApiListReducer, * as fromCreateApiListReducer from 'pokedex-rn/app/reducers/CreateApiListReducer.js'
+import Johto, * as fromJohto from 'pokedex-rn/app/reducers/JohtoReducer.js';
+import Hoenn, * as fromHoenn from 'pokedex-rn/app/reducers/HoennReducer.js';
 
 const rootReducer = combineReducers({
     Auth,
     PokemonList,
     Kanto,
-    Johto: CreateApiReducer('Johto'),
-	Hoenn: CreateApiReducer('Hoenn'),
-	Sinnoh: CreateApiReducer('Sinnoh'),
-	Unova: CreateApiReducer('Unova'),
-	PokemonListKalos: CreateApiListReducer('PokemonListKalos'),
-	PokemonListAlola: CreateApiListReducer('PokemonListAlola')
+    Johto,
+    Unova: CreateApiReducer('Unova'),
+    PokemonListAlola: CreateApiListReducer('PokemonListAlola'),
+    Hoenn
 });
 
 export default rootReducer;
+
+//Hoenn
+export const getHoenn = state =>
+	fromHoenn.getHoenn(state.Hoenn);
+//Johto
+export const getJohto = state =>
+	fromJohto.getJohto(state.Johto);
 
 // Aurh
 export const getAuthData = (state) =>
@@ -54,7 +61,7 @@ export const getCreateApiReducerData = (state, modelName) =>
 
 export const getCreateApiReducerIsLoading = (state, modelName) =>
 	fromCreateApiReducer.getCreateApiReducerIsLoading(state[modelName]);
-	
+
 export const getCreateApiReducerError = (state, modelName) =>
 	fromCreateApiReducer.getCreateApiReducerError(state[modelName]);
 

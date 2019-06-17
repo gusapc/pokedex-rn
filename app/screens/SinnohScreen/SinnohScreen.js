@@ -8,7 +8,7 @@ import {
 import styles from './SinnohScreenStyle';
 import HeaderNav from 'pokedex-rn/app/components/HeaderNav';
 import TitleText from 'pokedex-rn/app/components/TitleText';
-import PokeListByRegionContainer from 'pokedex-rn/app/containers/PokeListByRegionContainer';
+import SinnohContainer from 'pokedex-rn/app/containers/SinnohContainer';
 
 export default class SinnohScreen extends Component {	
 	
@@ -28,10 +28,7 @@ export default class SinnohScreen extends Component {
 					}
 				/>
 				<ScrollView>
-					<PokeListByRegionContainer
-						modelName='Sinnoh'
-						regionId='7'
-					/>
+					<SinnohContainer/>
 				</ScrollView>
 			</View>
 		);

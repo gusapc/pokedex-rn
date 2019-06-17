@@ -8,7 +8,7 @@ import {
 import styles from './HoennScreenStyle';
 import HeaderNav from 'pokedex-rn/app/components/HeaderNav';
 import TitleText from 'pokedex-rn/app/components/TitleText';
-import PokeListByRegionContainer from 'pokedex-rn/app/containers/PokeListByRegionContainer';
+import HoennContainer from 'pokedex-rn/app/containers/HoennContainer';
 
 export default class HoennScreen extends Component {	
 	
@@ -28,10 +28,7 @@ export default class HoennScreen extends Component {
 					}
 				/>
 				<ScrollView>
-					<PokeListByRegionContainer
-						modelName='Hoenn'
-						regionId='4'
-					/>
+					<HoennContainer />
 				</ScrollView>
 			</View>
 		);

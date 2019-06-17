@@ -5,6 +5,6 @@ export default StyleSheet.create({
 	...ApplicationStyles.screen,
 	...ApplicationStyles.margins,
 	bottomMargin: {
-		marginBottom: 120
+		marginBottom: 1
 	}
 });
