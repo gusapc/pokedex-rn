@@ -23,6 +23,12 @@ export default {
 		return this.makeRequest({url, method});
 	},
 
+	getPokemon(name){
+		const url = `${this.pokehost}pokemon/${name}`
+		const method = 'GET';
+		return this.makeRequest({url, method});
+	},
+
 	makeQueryParams (params) {
 		let queries = '';
 		for(var key in params){

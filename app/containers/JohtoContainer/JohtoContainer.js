@@ -15,6 +15,9 @@ import { getJohto } from 'pokedex-rn/app/reducers';
 import ApiMapContainer from 'pokedex-rn/app/containers/ApiMapContainer';
 import ColumnsIconArrow from 'pokedex-rn/app/components/ColumnsIconArrow';
 import Divider from 'pokedex-rn/app/components/Divider';
+import NavigationService from 'pokedex-rn/app/services/NavigationService';
+
+import { fetchtPokemon } from 'pokedex-rn/app/actions/PokemonActions';
 
 export default function JohtoContainer (props){	
 	
@@ -33,10 +36,10 @@ export default function JohtoContainer (props){
 				title={pokeName}
 				color={'darkest'}
 				onPress={() =>{
-					// this.props.fetchtPokemon(item.pokemon_species.name);
-					// NavigationService.navigate('PokemonDetilsScreen', {
-					// 	pokeName: pokeName
-					// });
+					dispatch(fetchtPokemon(item.pokemon_species.name));
+					NavigationService.navigate('PokemonDetilsScreen', {
+						pokeName: pokeName
+					});
 				}}
 			/>
 		)

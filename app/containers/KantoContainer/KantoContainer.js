@@ -10,7 +10,7 @@ import { getKantoData } from 'pokedex-rn/app/actions/KantoActions';
 import ApiMapContainer from 'pokedex-rn/app/containers/ApiMapContainer';
 import ColumnsIconArrow from 'pokedex-rn/app/components/ColumnsIconArrow';
 import NavigationService from 'pokedex-rn/app/services/NavigationService';
-//import { fetchtPokemon } from 'pokedex-rn/app/actions/PokemonActions';
+import { fetchtPokemon } from 'pokedex-rn/app/actions/PokemonActions';
 import Divider from 'pokedex-rn/app/components/Divider';
 import { View } from 'react-native';
 export default function KantoContainer (props) {	
@@ -32,10 +32,10 @@ export default function KantoContainer (props) {
 				title={pokeName}
 				color={'darkest'}
 				onPress={() =>{
-					// this.props.fetchtPokemon(item.pokemon_species.name);
-					// NavigationService.navigate('PokemonDetilsScreen', {
-					// 	pokeName: pokeName
-					// });
+					dispatch(fetchtPokemon(item.pokemon_species.name));
+					NavigationService.navigate('PokemonDetilsScreen', {
+						pokeName: pokeName
+					});
 				}}
 			/>
 		)

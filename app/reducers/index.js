@@ -1,3 +1,4 @@
+import Pokemon, * as fromPokemon from 'pokedex-rn/app/reducers/PokemonReducer.js'
 import Kanto, * as fromKanto from 'pokedex-rn/app/reducers/KantoReducer.js'
 import PokemonList, * as fromPokemonList from 'pokedex-rn/app/reducers/PokemonListReducer.js'
 import { combineReducers } from 'redux'
@@ -9,6 +10,7 @@ import Hoenn, * as fromHoenn from 'pokedex-rn/app/reducers/HoennReducer.js';
 
 const rootReducer = combineReducers({
     Auth,
+    Pokemon,
     PokemonList,
     Kanto,
     Johto,
@@ -18,6 +20,17 @@ const rootReducer = combineReducers({
 });
 
 export default rootReducer;
+
+//Pokemon
+
+export const getIsLoadingPokemon = state =>
+	fromPokemon.getIsLoadingPokemon(state.Pokemon);
+
+export const getErrorPokemon = state =>
+	fromPokemon.getErrorPokemon(state.Pokemon);
+
+export const getPokemon = state =>
+	fromPokemon.getPokemon(state.Pokemon);
 
 //Hoenn
 export const getHoenn = state =>

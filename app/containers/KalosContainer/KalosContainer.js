@@ -10,12 +10,17 @@ import ApiService from 'pokedex-rn/app/services/ApiService';
 import ColumnsIconArrow from 'pokedex-rn/app/components/ColumnsIconArrow';
 import Divider from 'pokedex-rn/app/components/Divider';
 import ErrorState from 'pokedex-rn/app/components/ErrorState';
-
+import { useDispatch } from 'react-redux';
 import EmptyState from 'pokedex-rn/app/components/EmptyState';
 
+import NavigationService from 'pokedex-rn/app/services/NavigationService';
+
+import { fetchtPokemon } from 'pokedex-rn/app/actions/PokemonActions';
 export default function KalosContainer (props) {	
 
-	const PAGE_SIZE = 50
+	const PAGE_SIZE = 50;
+
+	const dispatch = useDispatch();
 	
 	const pokeListKalos = useQuery(() => ApiService.getPokeList({ offset: 649, limit: PAGE_SIZE }));
 
@@ -42,10 +47,10 @@ export default function KalosContainer (props) {
 				title={pokeName}
 				color={'darkest'}
 				onPress={() =>{
-					// this.props.fetchtPokemon(item.name);
-					// NavigationService.navigate('PokemonDetilsScreen', {
-					// 	pokeName: pokeName
-					// });
+					dispatch(fetchtPokemon(item.name));
+					NavigationService.navigate('PokemonDetilsScreen', {
+						pokeName: pokeName
+					});
 				}}
 			/>
 		)

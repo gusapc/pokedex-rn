@@ -1,11 +1,17 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
 import { useQuery } from 'react-query-hooks';
 import ApiService from 'pokedex-rn/app/services/ApiService';
 import ApiMapContainer from 'pokedex-rn/app/containers/ApiMapContainer';
 import ColumnsIconArrow from 'pokedex-rn/app/components/ColumnsIconArrow';
 import Divider from 'pokedex-rn/app/components/Divider';
+import NavigationService from 'pokedex-rn/app/services/NavigationService';
+
+import { fetchtPokemon } from 'pokedex-rn/app/actions/PokemonActions';
 
 export default function SinnohContainer (props){	
+
+	const dispatch = useDispatch();
 
 	let pokeListSinnoh = useQuery(() => ApiService.getPokeListByRegion({regionId: 6}));
 	
@@ -19,10 +25,10 @@ export default function SinnohContainer (props){
 				title={pokeName}
 				color={'darkest'}
 				onPress={() =>{
-					// this.props.fetchtPokemon(item.pokemon_species.name);
-					// NavigationService.navigate('PokemonDetilsScreen', {
-					// 	pokeName: pokeName
-					// });
+					dispatch(fetchtPokemon(item.pokemon_species.name));
+					NavigationService.navigate('PokemonDetilsScreen', {
+						pokeName: pokeName
+					});
 				}}
 			/>
 		)

@@ -9,6 +9,7 @@ import {
 
 import styles from './HomeScreenStyle';
 import { fetchPokemonListBatch, reloadPokemonList} from 'pokedex-rn/app/actions/PokemonListActions';
+import { fetchtPokemon } from 'pokedex-rn/app/actions/PokemonActions';
 
 import { 
 	getIsLoadingPokemonList,
@@ -51,11 +52,10 @@ export default function HomeScreen (props) {
 				title={pokeName}
 				color={'darkest'}
 				onPress={() =>{
-					alert(item.name);
-					// this.props.fetchtPokemon(item.name);
-					// NavigationService.navigate('PokemonDetilsScreen', {
-					// 	pokeName: pokeName
-					// });
+					dispatch(fetchtPokemon(item.name));
+					props.navigation.navigate('PokemonDetilsScreen', {
+						pokeName: pokeName
+					});
 				}}
 			/>
 		)

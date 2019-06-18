@@ -11,6 +11,8 @@ import Divider from 'pokedex-rn/app/components/Divider';
 import ErrorState from 'pokedex-rn/app/components/ErrorState';
 import EmptyState from 'pokedex-rn/app/components/EmptyState';
 import ColumnsIconArrow from 'pokedex-rn/app/components/ColumnsIconArrow';
+import NavigationService from 'pokedex-rn/app/services/NavigationService';
+import { fetchtPokemon } from 'pokedex-rn/app/actions/PokemonActions';
 
 export default function HoennContainer (props) {	
 
@@ -45,11 +47,10 @@ export default function HoennContainer (props) {
 				title={pokeName}
 				color={'darkest'}
 				onPress={() =>{
-					alert(item.name);
-					// this.props.fetchtPokemon(item.name);
-					// NavigationService.navigate('PokemonDetilsScreen', {
-					// 	pokeName: pokeName
-					// });
+					dispatch(fetchtPokemon(item.name));
+					NavigationService.navigate('PokemonDetilsScreen', {
+						pokeName: pokeName
+					});
 				}}
 			/>
 		)

@@ -23,11 +23,12 @@
 		"react-native-keyboard-spacer": "^0.4.1",
 		"react-native-web": "^0.11.4",
 		"react-navigation": "^3.11.0",
-		"react-query-hooks": "^0.0.4",
+		"react-query-hooks": "^0.0.5",
 		"react-redux": "7.1.0-alpha.5",
 		"redux": "^4.0.1",
 		"redux-persist": "^5.10.0",
-		"redux-thunk": "^2.3.0"
+		"redux-thunk": "^2.3.0",
+		"victory-native": "^32.0.2"
 	},
 	"devDependencies": {
 		"babel-preset-expo": "^5.1.1",

@@ -6,8 +6,8 @@ import ColumnsIconArrow from 'pokedex-rn/app/components/ColumnsIconArrow';
 import ApiListContainer from 'pokedex-rn/app/containers/ApiListContainer';
 import { connect } from 'react-redux';
 import { getIsRefreshingApiList, getErrorApiList, getApiListData } from 'pokedex-rn/app/reducers';
-//import NavigationService from 'pokedex-rn/app/services/NavigationService';
-//import { fetchtPokemon } from 'pokedex-rn/app/actions/PokemonActions';
+import NavigationService from 'pokedex-rn/app/services/NavigationService';
+import { fetchtPokemon } from 'pokedex-rn/app/actions/PokemonActions';
 import { fetchApiListBatch, reloadApiList } from 'pokedex-rn/app/actions/ApiListActions';
 import Divider from 'pokedex-rn/app/components/Divider';
 
@@ -27,10 +27,10 @@ class PokeListContainer extends Component {
 				title={pokeName}
 				color={'darkest'}
 				onPress={() =>{
-					// this.props.fetchtPokemon(item.name);
-					// NavigationService.navigate('PokemonDetilsScreen', {
-					// 	pokeName: pokeName
-					// });
+					this.props.fetchtPokemon(item.name);
+					NavigationService.navigate('PokemonDetilsScreen', {
+						pokeName: pokeName
+					});
 				}}
 			/>
 		)
@@ -71,7 +71,7 @@ export default connect(
 	{
 		fetchApiListBatch,
 		reloadApiList,
-		//fetchtPokemon
+		fetchtPokemon
 	}
 )(PokeListContainer);
 
