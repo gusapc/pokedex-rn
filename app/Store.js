@@ -10,7 +10,7 @@ const persistConfig = {
 	key: 'root',
 	storage: storage,
 	stateReconciler: autoMergeLevel1,
-	whitelist: ['Auth']
+	whitelist: ['Auth', 'PokeTeams']
 };
 
 const pReducer = persistReducer(persistConfig, rootReducer);

@@ -1,8 +1,15 @@
 import React, { Component } from 'react';
-import { TouchableOpacity, View } from 'react-native';
+import { 
+	Text,
+	View,
+	TouchableOpacity,
+	 } from 'react-native';
+import PropTypes from 'prop-types';
+
 import styles from './AddTeamPokemonStyle';
-import ActionSheet from 'react-native-actionsheet'
 import { Feather } from '@expo/vector-icons';
+import ActionSheet from 'react-native-actionsheet'
+import PokemonContainer from 'pokedex-rn/app/containers/PokemonContainer';
 import { Colors } from 'pokedex-rn/app/styles';
 
 export default class AddTeamPokemon extends Component {
@@ -12,6 +19,8 @@ export default class AddTeamPokemon extends Component {
 		this.ActionSheet.show();
 	}
 
+	capitalLetter = (word) => word.charAt(0).toUpperCase() + word.slice(1)
+	
 	render() {
 		return (
 			<View>
@@ -27,15 +36,52 @@ export default class AddTeamPokemon extends Component {
 						color={Colors.black}
 					/>
 				</TouchableOpacity>
-				<ActionSheet
-					ref={o => this.ActionSheet = o}
-					title={'Which one do you like ?'}
-					options={['Apple', 'Banana', 'cancel']}
-					cancelButtonIndex={2}
-					destructiveButtonIndex={1}
-					onPress={(index) => { /* do something */ }}
-				/>
+				<PokemonContainer>
+				{(isLoading, error, pokemon, fetchtPokemon, setData, authData, teams) => {
+					if (isLoading) return;
+					//let userTeam = teams[authData.name] ? teams[authData.name] : {`${authData.name}`: };
+					let userTeam;
+					if(teams[authData.username]) userTeam = teams[authData.username];
+					else {
+						teams[authData.username] = [{},{},{},{},{},{}];
+						userTeam = teams[authData.username];
+					};
+					let empty = 'Espacio disponible';
+					let teamNames = [empty,empty,empty,empty,empty,empty];
+					
+					userTeam.map((item, index) => {
+						if(item.forms) teamNames[index] = this.capitalLetter(item.forms[0].name);
+					})
+					teamNames.push('Cancelar');
+
+					let currentPokemon = {...pokemon};
+
+					delete currentPokemon.moves;
+					
+					return (
+						<ActionSheet
+							ref={o => this.ActionSheet = o}
+							title={'Selecciona el espacio que ocupara este pokemon en tu equipo, si el espacio esta asignado se sustituira'}
+							options={teamNames}
+							destructiveButtonIndex={6}
+							onPress={(index) => { 
+								if(index === 6) return;
+								teams[authData.username][index] = currentPokemon;
+								setData('PokeTeams', teams);
+							}}
+						/>
+					);
+				}}
+				</PokemonContainer>
 			</View>
 		);
 	}
 }
+
+	AddTeamPokemon.propTypes = {
+		// data: PropTypes.array
+	}
+
+	AddTeamPokemon.defaultProps = {
+		// data: []
+	}

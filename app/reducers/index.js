@@ -15,6 +15,7 @@ const rootReducer = combineReducers({
     Kanto,
     Johto,
     Unova: CreateApiReducer('Unova'),
+    PokeTeams: CreateApiReducer('PokeTeams'),
     PokemonListAlola: CreateApiListReducer('PokemonListAlola'),
     Hoenn
 });

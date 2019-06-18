@@ -18,12 +18,12 @@ class PokemonContainer extends Component {
 		let pokemon = this.props.pokemon;
 		let fetchtPokemon = this.props.fetchtPokemon;
 		let setData = this.props.setData;
-		//let teams = this.props.teams;
+		let teams = this.props.teams;
 		let authData = this.props.authData;
 		return (
 			<React.Fragment>
 			{
-				this.props.children(isLoading, error, pokemon, fetchtPokemon, setData, authData)
+				this.props.children(isLoading, error, pokemon, fetchtPokemon, setData, authData, teams)
 			}
 			</React.Fragment>
 		);
@@ -33,7 +33,7 @@ mapStateToProps = state => ({
 	isLoading: getIsLoadingPokemon(state),
 	error: getErrorPokemon(state),
 	pokemon: getPokemon(state),
-	//teams: getCreateApiReducerData(state, 'PokeTeams'),
+	teams: getCreateApiReducerData(state, 'PokeTeams'),
 	authData: getAuthData(state)
 })
 
