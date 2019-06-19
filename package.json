@@ -28,6 +28,7 @@
 		"redux": "^4.0.1",
 		"redux-persist": "^5.10.0",
 		"redux-thunk": "^2.3.0",
+		"react-native-qrcode": "^0.2.7",
 		"victory-native": "^32.0.2"
 	},
 	"devDependencies": {

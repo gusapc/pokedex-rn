@@ -5,13 +5,14 @@ import {
 } from 'react-native';
 
 import styles from './QrCodeScreenStyle';
+import TrainerInfoContainer from 'pokedex-rn/app/containers/TrainerInfoContainer';
 
 export default class QrCodeScreen extends Component {	
 	
 	render() {
 		return (
-			<View>
-				<Text>QrCodeScreen</Text>
+			<View style={[styles.row, styles.justifyContentCenter, styles.baseMarginTop]}>
+				<TrainerInfoContainer/>
 			</View>
 		);
 	}

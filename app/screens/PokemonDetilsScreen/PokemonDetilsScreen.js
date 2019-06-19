@@ -70,7 +70,6 @@ export default class PokemonDetilsScreen extends Component {
 				<PokemonContainer pokeName={pokeName}>
 				{(isLoading, error, pokemon, fetchtPokemon, setData, authData, teams) => {
 
-					console.log(isLoading);
 
 					if(isLoading)  return (
 						<View style={[styles.container, styles.justifyContentCenter, styles.baseHorizontalMargin]}>

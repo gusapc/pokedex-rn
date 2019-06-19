@@ -17,7 +17,8 @@ const rootReducer = combineReducers({
     Unova: CreateApiReducer('Unova'),
     PokeTeams: CreateApiReducer('PokeTeams'),
     PokemonListAlola: CreateApiListReducer('PokemonListAlola'),
-    Hoenn
+    Hoenn,
+	PokeTeams: CreateApiReducer('PokeTeams'),
 });
 
 export default rootReducer;

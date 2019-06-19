@@ -5,7 +5,6 @@ export const FETCH_POKEMON_SUCCESS = 'FETCH_POKEMON_SUCCESS';
 export const FETCH_POKEMON_FAILURE = 'FETCH_POKEMON_FAILURE';
 
 export function fetchtPokemon(name) {
-	console.log('asdadasd. ' + name)
 	return async dispatch => {
 		dispatch(fetchtokemonBegin());
 		await ApiService.getPokemon(name)
