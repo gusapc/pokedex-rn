@@ -23,6 +23,7 @@ import FriendScanScreen from 'pokedex-rn/app/screens/FriendScanScreen';
 import MyPokemonScreen from 'pokedex-rn/app/screens/MyPokemonScreen';
 import FriendsScreen from 'pokedex-rn/app/screens/FriendsScreen';
 import QrCodeScreen from 'pokedex-rn/app/screens/QrCodeScreen';
+
 import BottomBar from 'pokedex-rn/app/components/BottomBar';
 import RegionMenu from 'pokedex-rn/app/components/RegionMenu';
 import ProfileTab from 'pokedex-rn/app/components/ProfileTab';

@@ -34,7 +34,6 @@ class TrainerInfoContainer extends Component {
 			}
 		});
 		let trinerInfo = JSON.stringify(trainer);
-		console.log(trinerInfo);
 		return (
 			<QRCode
 				value={trinerInfo}
